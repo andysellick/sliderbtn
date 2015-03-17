@@ -3,20 +3,14 @@ A simple jQuery plugin for a sliding button selector
 
 See example and plugin for details.
 
-Usage:
-  $('.sliderbtn').sliderbtn();
+# Callback
 
-Options:
-  'numbering': 0 or 1, causes indexing of elements to either start from 0 or 1, defaults to 1
+The 'onClickChange' function applied to the plugin init call allows you to add an event for when an option is clicked. This function has two parameters - num, the index of the element clicked, and item, the value of the data-item attribute of the element clicked (if it exists).
 
-Callback:
-  $('.sliderbtn').sliderbtn({
-      'numbering':0,
-      onClickChange: function(num,item){
-          console.log('Item clicked was number ' + num + ', ' + item);
-      }
-  });
-  
-  Callback has two parameters:
-      - num is the index of the element clicked on
-      - item is the value of the data-item attribute of the element clicked on, if it exists
+# Options
+
+Just the one for now. 'numbering': 0 or 1, causes indexing of elements to either start from 0 or 1, defaults to 1
+
+# Responsiveness
+
+The plugin is mobile friendly, although you'll have to put in your own styles to decide how the slider should collapse or stack.
