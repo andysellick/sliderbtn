@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>sliderbtn test</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="sliderbtn.css"/>
+</head>
+
+<body>
+    <h1>sliderbtn</h1>
+
+    <div class="sliderbtn">
+        <a href="#" data-item="Malcolm Reynolds">Mal</a>
+        <a href="#" data-item="Zoe Alleyne Washburne">Zoe</a>
+        <a href="#" data-item="Inara Serra">Inara</a>
+        <a href="#" data-item="Simon Tam">Simon</a>
+        <a href="#" data-item="River Tam">River</a>
+        <a href="#" data-item="Kaywinnet Lee Frye">Kaylee</a>
+        <a href="#" data-item="Jayne Cobb">Jayne</a>
+        <a href="#" data-item="Hoban Washburne">Wash</a>
+        <a href="#" data-item="Derrial Book">Book</a>
+    </div>
+
+    <div id="output"></div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="sliderbtn.jquery.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.sliderbtn').sliderbtn({
+                'numbering':0,
+                onClickChange: function(num,item){
+                    $('#output').html('Item clicked was number ' + num + ', ' + item);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
