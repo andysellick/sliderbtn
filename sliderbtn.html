@@ -4,6 +4,18 @@
     <title>sliderbtn test</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="sliderbtn.css"/>
+    <style>
+        @media (max-width:400px){
+            .sliderbtn {
+                display:block;
+            }
+            .sliderbtn a {
+                float:none;
+                display:block;
+                text-align:center;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -29,6 +41,7 @@
         $(document).ready(function(){
             $('.sliderbtn').sliderbtn({
                 'numbering':0,
+                'initial': 100,
                 onClickChange: function(num,item){
                     $('#output').html('Item clicked was number ' + num + ', ' + item);
                 }
