@@ -13,8 +13,11 @@ Options
 -------
 
 'numbering': 0 or 1, causes indexing of elements to either start from 0 or 1, defaults to 1
+
 'initial': -1 off, 0 or higher sets which link to initialise as the active one on load
+
 'initialInstant': sets whether initialisation of hilight should be instant or animated
+
 'speed': sets speed of animation, ms
 
 
