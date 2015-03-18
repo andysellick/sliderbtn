@@ -12,7 +12,11 @@ The 'onClickChange' function applied to the plugin init call allows you to add a
 Options
 -------
 
-Just the one for now. 'numbering': 0 or 1, causes indexing of elements to either start from 0 or 1, defaults to 1
+'numbering': 0 or 1, causes indexing of elements to either start from 0 or 1, defaults to 1
+'initial': -1 off, 0 or higher sets which link to initialise as the active one on load
+'initialInstant': sets whether initialisation of hilight should be instant or animated
+'speed': sets speed of animation, ms
+
 
 Responsiveness
 --------------

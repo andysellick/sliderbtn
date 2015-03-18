@@ -38,7 +38,7 @@
 
 			this.settings = $.extend({
 				numbering: 1, //given a non-zero value, numbers the elements from 1 to x rather than 0 to x
-				initial: -1, //sets which link to initialise as the active one, if 0 or greater
+				initial: 0, //sets which link to initialise as the active one, if 0 or greater
 				initialInstant: 1, //sets whether initialisation of hilight should be instant or animated
 				speed: 500, //sets speed of animation, ms
 				onClickChange: function() {}
@@ -46,13 +46,11 @@
 
 			var clinks = this.$elem.find('a');
 			var $hilight = $('<div/>').addClass('hilight').css('width',clinks.first().outerWidth()).appendTo(this.$elem); //create the slider
-            if(thisobj.settings.initial > clinks.length - 1){
+            if(thisobj.settings.initial > clinks.length - 1)
                 thisobj.settings.initial = clinks.length - 1;
-            }
 
-			if(thisobj.settings.initial >= 0){
+			if(thisobj.settings.initial >= 0)
                 animateSlider(this.$elem.find('a:eq(' + thisobj.settings.initial + ')'),thisobj.settings.initialInstant);
-            }
 
 			clinks.on('click',function(e){
                 e.preventDefault();
@@ -75,11 +73,9 @@
                 var h = thisel.outerHeight(true);
 
                 var speed = thisobj.settings.speed;
-                if(instant){
-                    console.log('instant');
+                if(instant)
                     speed = 0;
-                }
-                $hilight.animate({
+                $hilight.stop().animate({
                     'left': p.left,
                     'top': p.top,
                     'width': w,
@@ -102,12 +98,10 @@
 		},
 		*/
 	}
-
 	$.fn.sliderbtn = function(options){
 		return this.each(function(){
 			new Plugin(this,options).init();
 		});
 	}
 	window.Plugin = Plugin;
-
 })(window,jQuery);
